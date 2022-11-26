@@ -9,13 +9,15 @@
  *
  *****************************************************************************/
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
+ * @file stats.c 
+ * @brief Implementation for assignment-1
  *
- * <Add Extended Description Here>
+ * Functions that take an int array and its length as parameter and 
+ * print it, its statistics, and
+ * find its min, max, mean and median values
  *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * @author Vivek Joshi
+ * @date November 26, 2022
  *
  */
 
@@ -40,4 +42,28 @@ void main() {
 
 }
 
-/* Add other Implementation File Code Here */
+void print_statistics(unsigned char a[], int len) {
+}
+
+void print_array(unsigned char a[], int len) {
+}
+
+unsigned char find_median(unsigned char a[], int len) {
+	return 0;
+}
+
+int find_mean(unsigned char a[], int len) {
+	return 0;
+}
+
+unsigned char find_max(unsigned char a[], int len) {
+	return 0;
+}
+
+unsigned char find_min(unsigned char a[], int len) {
+	return 0;
+}
+
+void sort_array(unsigned char a[], int len) {
+}
+
