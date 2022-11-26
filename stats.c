@@ -40,6 +40,7 @@ void main() {
   printf("orignial ");
   print_array(test, SIZE);
   printf("mean: %d\n", find_mean(test, SIZE));
+  printf("max: %d\n", find_maximum(test, SIZE));
 }
 
 void print_statistics(unsigned char a[], int len) {
@@ -63,11 +64,14 @@ int find_mean(unsigned char a[], int len) {
 	return sum/len;
 }
 
-unsigned char find_max(unsigned char a[], int len) {
-	return 0;
+unsigned char find_maximum(unsigned char a[], int len) {
+	unsigned char max = 0;
+	for (int i = 0; i < len; i++) 
+		max = max > a[i] ? max : a[i];
+	return max;
 }
 
-unsigned char find_min(unsigned char a[], int len) {
+unsigned char find_minimum(unsigned char a[], int len) {
 	return 0;
 }
 
