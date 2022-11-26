@@ -37,15 +37,19 @@ void main() {
                               201,   6,  12,  60,   8,   2,   5,  67,
                                 7,  87, 250, 230,  99,   3, 100,  90};
 
-  /* Other Variable Declarations Go Here */
-  /* Statistics and Printing Functions Go Here */
-
+  printf("orignial ");
+  print_array(test, SIZE);
+  printf("mean: %d\n", find_mean(test, SIZE));
 }
 
 void print_statistics(unsigned char a[], int len) {
 }
 
 void print_array(unsigned char a[], int len) {
+	printf("array [ ");
+	for (int i = 0; i < len; i++)
+		printf("%d ", a[i]);
+	printf("]\n");
 }
 
 unsigned char find_median(unsigned char a[], int len) {
@@ -53,7 +57,10 @@ unsigned char find_median(unsigned char a[], int len) {
 }
 
 int find_mean(unsigned char a[], int len) {
-	return 0;
+	int sum = 0;
+	for (int i = 0; i < len; i++) 
+		sum += a[i];
+	return sum/len;
 }
 
 unsigned char find_max(unsigned char a[], int len) {
