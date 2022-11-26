@@ -36,15 +36,20 @@ void main() {
                               200, 122, 150, 90,   92,  87, 177, 244,
                               201,   6,  12,  60,   8,   2,   5,  67,
                                 7,  87, 250, 230,  99,   3, 100,  90};
-
   printf("orignial ");
   print_array(test, SIZE);
-  printf("mean: %d\n", find_mean(test, SIZE));
-  printf("max: %d\n", find_maximum(test, SIZE));
-  printf("min: %d\n", find_minimum(test, SIZE));
+  sort_array(test, SIZE);
+  printf("sorted ");
+  print_array(test, SIZE);
+  printf("statistics:\n");
+  print_statistics(test, SIZE);
 }
 
 void print_statistics(unsigned char a[], int len) {
+	printf("mean: %d\n", find_mean(a, SIZE));
+        printf("max: %d\n", find_maximum(a, SIZE));
+        printf("min: %d\n", find_minimum(a, SIZE));
+        printf("median: %d\n", find_median(a, SIZE));
 }
 
 void print_array(unsigned char a[], int len) {
@@ -55,7 +60,10 @@ void print_array(unsigned char a[], int len) {
 }
 
 unsigned char find_median(unsigned char a[], int len) {
-	return 0;
+	sort_array(a, len);
+	if (len % 2 == 0)
+		return (a[len/2] + a[len/2+1])/2.0 ;
+	return a[len/2 + 1];
 }
 
 int find_mean(unsigned char a[], int len) {
@@ -73,12 +81,22 @@ unsigned char find_maximum(unsigned char a[], int len) {
 }
 
 unsigned char find_minimum(unsigned char a[], int len) {
-	unsigned char min = 0;
+	unsigned char min = 255;
 	for (int i = 0; i < len; i++) 
 		min = min < a[i] ? min : a[i];
 	return min;
 }
 
 void sort_array(unsigned char a[], int len) {
+	int i, key, j;
+	for (i = 1; i < len; i++) {
+		key = a[i];
+		j = i - 1;
+		while (j >= 0 && a[j] < key) {
+		 	a[j + 1] = a[j];
+			j = j - 1;
+		}
+		a[j + 1] = key;
+	}
 }
 
