@@ -41,6 +41,7 @@ void main() {
   print_array(test, SIZE);
   printf("mean: %d\n", find_mean(test, SIZE));
   printf("max: %d\n", find_maximum(test, SIZE));
+  printf("min: %d\n", find_minimum(test, SIZE));
 }
 
 void print_statistics(unsigned char a[], int len) {
@@ -72,7 +73,10 @@ unsigned char find_maximum(unsigned char a[], int len) {
 }
 
 unsigned char find_minimum(unsigned char a[], int len) {
-	return 0;
+	unsigned char min = 0;
+	for (int i = 0; i < len; i++) 
+		min = min < a[i] ? min : a[i];
+	return min;
 }
 
 void sort_array(unsigned char a[], int len) {
